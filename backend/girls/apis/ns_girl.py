@@ -2,7 +2,7 @@
 
 from flask_restplus import Namespace, Resource, fields, reqparse
 from girls.models import Girl as GirlModel
-from girls.lib.validation import page_validator, per_page_validor
+from girls.lib.validators import page_validator, per_page_validator
 
 ns_girl = Namespace('Beautiful Girl', description='shine your eyes', path='/')
 
@@ -29,7 +29,7 @@ class Girl(Resource):
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument('page', default=1, type=page_validator)
-        parser.add_argument('per_page', default=10, type=per_page_validor)
+        parser.add_argument('per_page', default=10, type=per_page_validator)
         args = parser.parse_args()
         return GirlModel.query.order_by(GirlModel.created_on.desc()).paginate(page=args['page'],
                                                                               per_page=args['per_page'],

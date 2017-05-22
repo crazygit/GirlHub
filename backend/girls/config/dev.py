@@ -6,6 +6,6 @@ DEBUG = True
 
 
 # flask-sqlalchemy
-SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/girls.sqlite'
+SQLALCHEMY_DATABASE_URI = 'sqlite:////data/girls.sqlite'
 SQLALCHEMY_ECHO = True
 
