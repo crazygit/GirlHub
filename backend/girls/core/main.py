@@ -4,7 +4,7 @@ import os
 from flask import Flask, Blueprint
 
 from girls.config import dev
-from .extensions import db
+from .extensions import db, cors
 from girls.apis import api
 
 
@@ -36,6 +36,9 @@ def config_blueprints(app):
                                 static_folder=app.config['IMAGES_STORE'])
     app.register_blueprint(api_blueprint, url_prefix='/api/v1')
     app.register_blueprint(image_blueprint, url_prefix='/image')
+    # enable cors when debug
+    if app.debug:
+        cors.init_app(app, resources=r'/api/v1/*')
 
 
 def config_url_rule(app):

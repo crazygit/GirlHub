@@ -26,6 +26,10 @@ girl_list = ns_girl.model('GirlList', {
 @ns_girl.route('/girl')
 class Girl(Resource):
     @ns_girl.marshal_list_with(girl_list)
+    @ns_girl.doc(params = {
+        'page': 'request page number',
+        'per_page': 'return item number in a request',
+    })
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument('page', default=1, type=page_validator)
