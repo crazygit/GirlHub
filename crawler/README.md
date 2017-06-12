@@ -5,10 +5,17 @@
     $ python --version
     Python 3.6.1
 
-## 由于爬虫的插件`scrapy-deltafetch`需要`berkeley-db`
+## 由于爬虫的插件`scrapy-deltafetch`需要`berkeley-db`, 因此需要单独安装`berkeley-db`
+
+### On Mac
 
     $ brew install berkeley-db
     $ BERKELEYDB_DIR=/usr/local/Cellar/berkeley-db/6.2.23 YES_I_HAVE_THE_RIGHT_TO_USE_THIS_BERKELEY_DB_VERSION=yes pip install scrapy-deltafetch==1.2.1
+
+### Ubuntu
+
+    $ sudo apt-get install libdb5.3-dev
+    $ pip install scrapy-deltafetch==1.2.1
 
 ## 运行
 
