@@ -46,9 +46,9 @@ CONCURRENT_REQUESTS_PER_IP = 2
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'girls.middlewares.GirlsSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'scrapy_deltafetch.DeltaFetch': 100,
+}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
@@ -58,9 +58,9 @@ CONCURRENT_REQUESTS_PER_IP = 2
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+EXTENSIONS = {
+   'girls.extensions.deltafetch.SyncDeltaFetch': 100,
+}
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
@@ -93,3 +93,10 @@ IMAGES_STORE = '/data/image/girls'
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# scrapy-deltafetch
+DELTAFETCH_ENABLED = True
+DELTAFETCH_DIR = 'deltafetch'
+
+# extension SyncDeltaFetch
+SYNC_DELTAFETCH_ENABLED = True

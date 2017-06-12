@@ -9,7 +9,7 @@ from girls.loader import GirlItemLoader
 class MeizituSpider(scrapy.Spider):
     name = "meizitu"
     allowed_domains = ["meizitu.com"]
-    start_urls = ['http://www.meizitu.com/a/list_1_1.html']
+    start_urls = ['http://www.meizitu.com/a/more_1.html']
 
     def make_requests_from_url(self, url):
         return Request(url, dont_filter=True, meta={'parse_tags': True})
