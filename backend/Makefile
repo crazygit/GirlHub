@@ -9,7 +9,7 @@ install:
 	pip install -r requirements.txt
 
 clean:
-	@find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+	@find . | grep -E "(__pycache__|\.pyc|\.pyo)$$" | xargs rm -rf
 
 help:
 	@echo "   \033[35mmake\033[0m \033[1m命令使用说明\033[0m"
