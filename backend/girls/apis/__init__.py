@@ -5,6 +5,7 @@ from .ns_girl import ns_girl
 
 api = Api(title="DataHub",
           version='1.0',
-          description='All funny things are here')
+          description='All funny things are here',
+          doc='/doc/')
 
 api.add_namespace(ns_girl)

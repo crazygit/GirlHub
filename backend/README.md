@@ -8,3 +8,7 @@
 ## 运行
 
     $ python mange.py runserver
+
+## Doc
+
+    $ http://localhost:8888/api/v1/doc/
